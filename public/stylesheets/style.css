@@ -1,0 +1,210 @@
+body {
+  padding: 50px;
+  font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #565656;
+  background-color: #e1e1e1;
+}
+
+p{
+  font-weight: 300;
+}
+
+a {
+  color: #565656;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+h1{
+  font-weight: lighter;
+}
+
+#left{
+  float: left;
+  width: 35vw;
+}
+
+#right{
+  float: right;
+  width: 50vw;
+}
+
+#left img{
+  width: inherit;
+}
+
+#title{
+  text-align: center;
+  background-color: #60cd74;
+}
+
+#delete{
+  background-color: #ff563d;
+  margin: 10px;
+  padding: 2px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #565656;
+  font-weight: 300;
+  display: inline;
+}
+
+#buttons button{
+  margin: 10px;
+  padding: 2px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #565656;
+  font-weight: 300;
+}
+
+#edit{
+  background-color: #60cd74;
+  margin-left: 0px;
+  margin: 10px;
+  padding: 2px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #565656;
+  font-weight: 300;
+}
+
+#deleteButton{
+  display: inline;
+}
+
+.star{
+  width: 25px;
+}
+
+.grids{
+  width: 20vw;
+  height: 20vw;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  font-size: .75em;
+}
+
+.Mexican{
+  background-image: url('../images/mexican.png');
+  background-size: 23vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.American{
+  background-image: url('../images/american.png');
+  background-size: 20vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.Italian{
+  background-image: url('../images/italian.png');
+  background-size: 20vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.Thai{
+  background-image: url('../images/thai.png');
+  background-size: 19vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.Vietnamese{
+  background-image: url('../images/vietnamese.png');
+  background-size: 18vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+#stars{
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+}
+
+#genre{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#location{
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+#rests{
+  position: absolute;
+  top: -25px;
+  left: 2px;
+
+
+}
+
+#headline{
+  background-color: #60cd74;
+  position: relative;
+  text-align: center;
+}
+
+#newRest{
+  position: absolute;
+  bottom:-10px;
+  right: 10px;
+  color: white;
+  font-size: .65em;
+}
+
+#newForm{
+  border: 1px solid black;
+  padding: 10px;
+  position: relative;
+}
+
+#submitButton{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+textarea{
+  width: 25vw;
+  height: 10vh;
+}
+
+input{
+  font-size: 1em;
+}
+
+select{
+  font-size: 1em;
+}
+
+#home{
+  width: 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

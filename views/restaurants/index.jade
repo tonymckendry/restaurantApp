@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  div#headline
+    h1 gTables
+    p#newRest
+      a(href='/restaurants/new') New Restaurant
+  each val, index in result
+    div(class='grids', class="#{result[index].genre}" )
+      h2#rests
+        - var link = result[index].name
+        a(href='/restaurants/' + link) #{result[index].name}
+      - var rating=result[index].rating
+      p#genre #{result[index].genre}
+      p#location #{result[index].location}
+      p#stars
+        span
+          while rating > 0
+            img(src='/images/star.svg', class='star')
+            - rating--

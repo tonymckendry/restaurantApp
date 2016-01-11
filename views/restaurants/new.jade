@@ -1,0 +1,93 @@
+extends ../layout
+
+block content
+  a(href='/')
+    img(id='home' src='https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/home.png')
+  div#headline
+    h1 New restaurants
+  form#newForm(name='newForm', action='/restaurants' method='post')
+    div
+      p
+        label(for="newName") Name
+        br
+        input(type="text" name="newName" id="newName" placeholder='Restaurant Name')
+    div
+      p
+        label(for="newLocation") Location
+        br
+        input(type="text" name="newCity" id="newLocation" placeholder='City')
+        select(name="newState")
+          option(value='AL') Alabama
+          option(value='AK') Alaska
+          option(value='AZ') Arizona
+          option(value='AR') Arkansas
+          option(value='CA') California
+          option(value='CO') Colorado
+          option(value='CT') Connecticut
+          option(value='DE') Delaware
+          option(value='DC') District of Columbia
+          option(value='FL') Florida
+          option(value='GA') Georgia
+          option(value='HI') Hawaii
+          option(value='ID') Idaho
+          option(value='IL') Illinois
+          option(value='IN') Indiana
+          option(value='IA') Iowa
+          option(value='KS') Kansas
+          option(value='KY') Kentucky
+          option(value='LA') Louisiana
+          option(value='ME') Maine
+          option(value='MD') Maryland
+          option(value='MA') Massachusetts
+          option(value='MI') Michigan
+          option(value='MN') Minnesota
+          option(value='MS') Mississippi
+          option(value='MO') Missouri
+          option(value='MT') Montana
+          option(value='NE') Nebraska
+          option(value='NV') Nevada
+          option(value='NH') New Hampshire
+          option(value='NJ') New Jersey
+          option(value='NM') New Mexico
+          option(value='NY') New York
+          option(value='NC') North Carolina
+          option(value='ND') North Dakota
+          option(value='OH') Ohio
+          option(value='OK') Oklahoma
+          option(value='OR') Oregon
+          option(value='PA') Pennsylvania
+          option(value='RI') Rhode Island
+          option(value='SC') South Carolina
+          option(value='SD') South Dakota
+          option(value='TN') Tennessee
+          option(value='TX') Texas
+          option(value='UT') Utah
+          option(value='VT') Vermont
+          option(value='VA') Virginia
+          option(value='WA') Washington
+          option(value='WV') West Virginia
+          option(value='WI') Wisconsin
+          option(value='WY') Wyoming
+    div
+      label(for="newGenre") Cuisine
+      br
+      select(name="newGenre")
+        option(value='Mexican') Mexican
+        option(value='American') American
+        option(value='Thai') Thai
+        option(value='Vietnamese') Vietnamese
+        option(value='Italian') Italian
+    div
+      br
+      label(for="newRating") Rating
+      input(name='newRating' type='radio' value=1)
+      input(name='newRating' type='radio' value=2)
+      input(name='newRating' type='radio' value=3)
+      input(name='newRating' type='radio' value=4)
+      input(name='newRating' type='radio' value=5)
+    div
+      br
+      textarea(name="newDescription" placeholder='Short Bio')
+    div#submitButton
+      input#submit(type='submit' value='submit')
+      button#cancel Cancel
