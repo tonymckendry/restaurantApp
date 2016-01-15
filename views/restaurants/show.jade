@@ -10,6 +10,21 @@ block content
     - var image='/images/' + genre + '.png'
     - console.log(image)
     img(src=image)
+    div#employees
+      a(href= '/restaurants/' + results[0].name + '/employees/new/')
+        button#addEmployee Add Employee
+      table
+        thead 
+          tr
+            th First Name
+            th Last Name
+            th Position
+        tbody
+          each val, index in employees
+            tr
+              td #{employees[index].first_name}
+              td #{employees[index].last_name}
+              td #{employees[index].position}
   div#right
     - var rating=results[0].rating
     p #{results[0].genre} cuisine
@@ -24,3 +39,19 @@ block content
       a#edit(class ='button', href='/restaurants/' + results[0].name + '/edit/') Edit
       form(action='/restaurants/#{results[0].name}/delete' method='post' id='deleteButton')
         button#delete(type='submit', value='Delete') Delete
+    div#reviews
+      for val, index in reviews
+        div.review
+          div.authorSpan
+            |#{reviews[index].author}
+            span.dateSpan #{reviews[index].date.toString().slice(3,15)}
+          p.reviewText #{reviews[index].review}
+          - var revRating=reviews[index].rating
+          span.revRating
+            while revRating > 0
+              img(src='/images/star.svg', class='revStar')
+              - revRating--
+          span.editReview 
+            a(href='#{results[0].name}/reviews/#{reviews[index].id}/edit') Edit Review
+            
+            

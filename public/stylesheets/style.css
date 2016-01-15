@@ -85,6 +85,9 @@ h1{
 .star{
   width: 25px;
 }
+.revStar{
+  width: 15px;
+}
 
 .grids{
   width: 20vw;
@@ -207,4 +210,69 @@ select{
   position: absolute;
   top: 0;
   left: 0;
+}
+
+table{
+  border: 1px solid #55c86d;
+  border-collapse: collapse;
+  margin: 5px auto;
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+tr:first-of-type{
+  background-color: #e1f8e1;
+}
+th{
+  padding: 3px;
+  border-radius: 5px;
+}
+
+
+td{
+  text-align: center;
+  border-radius: 5px;
+}
+
+#addEmployee{
+  background-color: #78a4d9;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.review{
+  border: 1px solid #55c86d;
+  font-size: .8em;
+  position: relative;
+  margin-top: 20px;
+}
+
+.authorSpan{
+  font-size: .75em;
+  background-color: #e1f8e1;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.dateSpan{
+  float: right;
+}
+
+.editReview{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.revRating{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.reviewText{
+  margin-bottom: 30px;
 }

@@ -6,6 +6,14 @@ function food(){
   return knex('food');
 }
 
+function employees(){
+  return knex('employees')
+}
+
+function reviews(){
+  return knex('reviews')
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   food().select().then(function (results) {
@@ -61,10 +69,34 @@ router.post('/restaurants/:name', function(req, res){
 router.get('/restaurants/:name/', function(req, res, next){
   var name = req.params.name
   food().where('name', name).then(function (results) {
-    var results = results;
-    res.render('restaurants/show', {name: name, results: results})
+    var resulted = results;
+    console.log(resulted[0].id)
+    employees().where('rest_id', resulted[0].id).then(function(steve){
+      reviews().where('rest_id', resulted[0].id).then(function(review){
+        console.log(review)
+        res.render('restaurants/show', {name: name, results: resulted, employees: steve, reviews: review})
+      })
+    })
   })
 })
+
+router.get('/restaurants/:name/employees/new', function(req, res, next){
+  var name = req.params.name
+  res.render('restaurants/employees/new', {name: name})
+})
+
+router.post('/restaurants/:name/employees', function(req, res){
+  var newEmployee={
+    first_name: req.body.firstName,
+    last_name: req.body.lastName,
+    position: req.body.position,
+    rest_id: 5
+  }
+  employees().insert(newEmployee).then(function(result){
+    res.redirect('/restaurants/' + req.params.name)
+  })
+})
+
 
 router.post('/restaurants/:name/delete', function(req, res){
   food().where('name', req.params.name).del().then(function(result){

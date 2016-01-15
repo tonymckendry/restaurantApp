@@ -1,0 +1,25 @@
+extends ../../layout
+block content
+  div#headline
+    h1 New Employee
+  div#newEmployeeForm
+    form(name='newEmployee' action='/restaurants/' + name + '/employees/' method='post')
+      p
+        label(for='firstName') First Name
+      p
+        input(name='firstName' placeholder='First')
+      p
+        label(for='lastName') Last Name
+      p
+        input(name='lastName' placeholder='Last')
+      p
+        label(for='position') Position
+      p
+        select(name='position' placeholder='Last')
+          option Manager
+          option Server
+          option Host
+          option Chef
+      div#submitButton
+        input#submit(type='submit' value='submit')
+        button#cancel Cancel
