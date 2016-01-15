@@ -1,0 +1,8 @@
+extends ../layout
+block content 
+  h1 the admin page 
+  each val, index in results
+    div
+      p #{results[index].name}
+        ul
+          li #{results[index].first_name} #{results[index].last_name}

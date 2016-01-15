@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var knex = require('knex')({
- client: 'pg',
- connection: process.env.DATABASE_URL || 'postgres://localhost/restaurants'
-});
+var knex = require('../db/knex');
 
 function food(){
   return knex('food');
@@ -75,6 +72,12 @@ router.post('/restaurants/:name/delete', function(req, res){
   })
 })
 
+router.get('/admin', function (req, res, next){
+  knex.from('food').innerJoin('employees', 'food.id', 'employees.food_id').then(function(empres){
+    res.render('restaurants/admin', {results: empres})
+    console.log(empres);
+  })
+})
 
 
 module.exports = router;
