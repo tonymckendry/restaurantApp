@@ -5,7 +5,9 @@ block content
     img(id='home' src='https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/home.png')
   div#headline
     h1 Edit Restaurant
-  form#editForm(name='editForm', action='/restaurants/'+ data.name, method='post')
+  if error
+    span#error #{error}
+  form#editForm(name='editForm', action='/restaurants/'+ data.id, method='post')
     div
       p
         label(for="editName") Name

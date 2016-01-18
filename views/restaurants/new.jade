@@ -1,10 +1,13 @@
 extends ../layout
 
 block content
+  
   a(href='/')
     img(id='home' src='https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/home.png')
   div#headline
     h1 New restaurants
+  if error
+    span#error #{error}
   form#newForm(name='newForm', action='/restaurants' method='post')
     div
       p

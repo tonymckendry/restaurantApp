@@ -5,14 +5,13 @@ block content
     h1 gTables
     p#newRest
       a(href='/restaurants/new') New Restaurant
-  each val, index in result
-    div(class='grids', class="#{result[index].genre}" )
+  for restaurant in restaurants
+    div(class='grids', class="#{restaurant.genre}" )
       h2#rests
-        - var link = result[index].name
-        a(href='/restaurants/' + link) #{result[index].name}
-      - var rating=result[index].rating
-      p#genre #{result[index].genre}
-      p#location #{result[index].location}
+        a(href='/restaurants/'+ restaurant.id)= restaurant.name
+      - var rating=restaurant.rating
+      p#genre #{restaurant.genre}
+      p#location #{restaurant.location}
       p#stars
         span
           while rating > 0

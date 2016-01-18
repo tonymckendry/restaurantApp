@@ -241,6 +241,7 @@ td{
   border-radius: 5px;
   font-size: 1em;
   font-weight: 300;
+  padding: 2px;
 }
 
 .review{
@@ -275,4 +276,13 @@ td{
 
 .reviewText{
   margin-bottom: 30px;
+}
+
+textarea{
+  width: 30vw;
+  height: 10vh;
+}
+
+#error{
+  color: red;
 }

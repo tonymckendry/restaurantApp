@@ -1,0 +1,29 @@
+extends ../../layout
+block content
+  div#headline
+    h1 Edit Review
+  div#newEmployeeForm
+    - console.log("**** ROUTE FROM JADE ****")
+  - console.log('/restaurants/' + results[0].rest_id + '/reviews/' + results[0].id)
+    form(name='editReview' action='/restaurants/' + results[0].rest_id + '/reviews/' + results[0].id, method='post')
+      p
+        label(for='author') Author
+      p
+        input(name='author' value=results[0].author)
+      p
+        label(for="rating") Rating
+        input(name='rating' type='radio' value=1 checked=results[0].rating==1)
+        input(name='rating' type='radio' value=2 checked=results[0].rating==2)
+        input(name='rating' type='radio' value=3 checked=results[0].rating==3)
+        input(name='rating' type='radio' value=4 checked=results[0].rating==4)
+        input(name='rating' type='radio' value=5 checked=results[0].rating==5)
+      p
+        label(for='review') Review
+      p
+        input(name='review' type='textarea' value=results[0].review)
+      div#submitButton
+        input#submit(type='submit' value='submit')
+        button#cancel Cancel
+    form(action='/restaurants/#{results[0].rest_id}/reviews/#{results[0].id}/delete' method='post' id='deleteButton')
+      button#delete(type='submit', value='Delete') Delete
+    

@@ -1,3 +1,24 @@
-extends ../layout
+extends ../../layout
 block content
-  
+  div#headline
+    h1 New Review
+  div#newEmployeeForm
+    form(name='newReview' action='/restaurants/' + name + '/reviews/' method='post')
+      p
+        label(for='author') Author
+      p
+        input(name='author' placeholder='Author')
+      p
+        label(for="rating") Rating
+        input(name='rating' type='radio' value=1)
+        input(name='rating' type='radio' value=2)
+        input(name='rating' type='radio' value=3)
+        input(name='rating' type='radio' value=4)
+        input(name='rating' type='radio' value=5)
+      p
+        label(for='review') Review
+      p
+        input(name='review' type='textarea' placeholder='Write your review here...')
+      div#submitButton
+        input#submit(type='submit' value='submit')
+        button#cancel Cancel

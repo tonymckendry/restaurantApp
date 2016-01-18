@@ -2,8 +2,10 @@ extends ../../layout
 block content
   div#headline
     h1 New Employee
+  if error
+    span#error #{error}
   div#newEmployeeForm
-    form(name='newEmployee' action='/restaurants/' + name + '/employees/' method='post')
+    form(name='newEmployee' action='/restaurants/' + id + '/employees/' method='post')
       p
         label(for='firstName') First Name
       p

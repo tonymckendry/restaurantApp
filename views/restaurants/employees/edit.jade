@@ -1,0 +1,28 @@
+extends ../../layout
+block content
+  div#headline
+    h1 Edit Employee
+  div#newEmployeeForm
+    form(name='newEmployee' action='/restaurants/' + results[0].rest_id + '/employees/' + results[0].id  method='post')
+      p
+        label(for='firstName') First Name
+      p
+        input(name='firstName' value=results[0].first_name)
+      p
+        label(for='lastName') Last Name
+      p
+        input(name='lastName' value=results[0].last_name)
+      p
+        label(for='position') Position
+      p
+        select(name='position')
+          option(selected=results[0].position == 'Manager') Manager
+          option(selected=results[0].position == 'Server') Server
+          option(selected=results[0].position == 'Host') Host
+          option(selected=results[0].position == 'Chef') Chef
+      div#submitButton
+        input#submit(type='submit' value='submit')
+        button#cancel Cancel
+        - console.log(results[0].rest_id)
+    form(action='/restaurants/#{results[0].rest_id}/employees/#{results[0].id}/delete' method='post' id='deleteButton')
+          button#delete(type='submit', value='Delete') Delete
